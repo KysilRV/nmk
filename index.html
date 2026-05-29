@@ -126,7 +126,7 @@ h1{font-size:clamp(38px, 6vw, 78px);line-height:.95;margin:22px 0 16px;letter-sp
   <section class="hero">
     <div class="badge"><i></i> NMK 2026 • Interaktívny tréning</div>
     <h1>Okruh otázok <span class="gradient">so správnymi odpoveďami</span></h1>
-    <p>Temný interaktívny test podľa dodaného dokumentu. Predvolený režim vyberie 20 otázok, ako na skúške, ale môžeš si zapnúť aj všetkých 79 otázok. Písomné otázky sú vyriešené nižšie aj s obrázkami.</p>
+    <p>Temný interaktívny test podľa dodaného dokumentu. Predvolený režim teraz zobrazuje všetkých 79 otázok naraz. Po výbere odpovede sa hneď ukáže, či je správna alebo nesprávna. Písomné otázky sú vyriešené nižšie aj s obrázkami.</p>
     <div class="stats">
       <div class="stat"><b>79</b><span>testových otázok</span></div>
       <div class="stat"><b>20×2</b><span>skúškový výber bodov</span></div>
@@ -136,8 +136,8 @@ h1{font-size:clamp(38px, 6vw, 78px);line-height:.95;margin:22px 0 16px;letter-sp
   </section>
 
   <nav class="toolbar">
-    <button class="btn primary" id="randomBtn">Náhodných 20 otázok</button>
-    <button class="btn" id="allBtn">Zobraziť všetkých 79</button>
+    <button class="btn" id="randomBtn">Náhodných 20 otázok</button>
+    <button class="btn primary" id="allBtn">Zobraziť všetkých 79</button>
     <button class="btn good" id="checkBtn">Skontrolovať odpovede</button>
     <button class="btn" id="showBtn">Ukázať správne</button>
     <button class="btn" id="resetBtn">Vymazať</button>
@@ -276,7 +276,7 @@ document.getElementById('reviewWrong').addEventListener('click', () => {
 });
 searchInput.addEventListener('input', renderQuiz);
 renderWritten();
-setRandom();
+setAll();
 </script>
 </body>
 </html>

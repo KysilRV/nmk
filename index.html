@@ -208,7 +208,10 @@ function renderQuiz() {
       </div>
       <div class="feedback" id="fb-${q.id}"></div>
     </article>`).join('');
-  quiz.querySelectorAll('input').forEach(i => i.addEventListener('change', () => { updateProgress(); if (checked) markOne(QUESTIONS.find(q=>q.id==i.name.slice(1))); }));
+  quiz.querySelectorAll('input').forEach(i => i.addEventListener('change', () => {
+    updateProgress();
+    markOne(QUESTIONS.find(q => q.id == i.name.slice(1)));
+  }));
   updateProgress();
 }
 function markOne(q) {
@@ -224,7 +227,9 @@ function markOne(q) {
   const right = q.options.find(o=>o.label===q.answer);
   fb.style.display = 'block';
   fb.className = 'feedback ' + (chosen === q.answer ? 'ok' : 'bad');
-  fb.innerHTML = chosen === q.answer ? `Správne. Odpoveď: <b>${q.answer})</b> ${escapeHtml(right.text)}` : `Správna odpoveď: <b>${q.answer})</b> ${escapeHtml(right.text)}`;
+  fb.innerHTML = chosen === q.answer
+    ? `✅ Správne. Odpoveď: <b>${q.answer})</b> ${escapeHtml(right.text)}`
+    : `❌ Nesprávne. Správna odpoveď: <b>${q.answer})</b> ${escapeHtml(right.text)}`;
 }
 function checkAnswers(showModal=true) {
   checked = true;
